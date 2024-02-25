@@ -1,0 +1,27 @@
+<div class="container column large-gap">
+    <div *ngIf="bannerProgressBar">
+        <h4 class="total-b-text">Total</h4>
+        <h2 class="total-b-value">{{ totalValue }}</h2>
+    </div>
+
+    <div class="container row bar-total">
+        <ng-container *ngFor="let barData of progressBarData; let i = index">
+            <div class="container center-items just-center status-bar-sections bar-value"
+                [ngClass]="renderBarSections(i)" [ngStyle]="{
+                'width.%': barData.percentage,
+                'background-color': barData.valueColorAssignment
+             }">
+                {{ barData.displayNumber }}
+            </div>
+        </ng-container>
+    </div>
+    <div class="footer">
+        <div class="container just-around" [ngClass]="bannerProgressBar ? 'footer-b-row' : 'footer-s-row'">
+            <div *ngFor="let key of progressBarLegend" class="container center-items small-gap footer-value">
+                <div class="just-self-center color-box" [ngStyle]="{ 'background-color': key.valueColorAssignment }">
+                </div>
+                <div>{{ key.legendValue }}</div>
+            </div>
+        </div>
+    </div>
+</div>
