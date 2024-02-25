@@ -1,27 +1,26 @@
-# ProgressWorkspace
+# Angular Multi-Progress Bar
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
+This is a free to use package that gives you the scaffolding you need to make a sectioned progress bar!
 
-## Development server
+## Inputs
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+*progressBarData* : Pass in an array of the following objects (one for each section). This is to build the bar itself.
+| Property               |Value                          |Purpose|
+|----------------|-------------------------------|-----------------------------|
+|percentage| `number`          |How much of the bar will this section take?            |
+| displayNumber|`number`|What is the numerical value that will display over this section?            |
+| valueColorAssignment|`string`|What color will this section be?|
 
-## Code scaffolding
+-------------
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+*progressBarLegend* : Pass in an array of the following objects (one for each section). This is to build the labels below the bar
+| Property               |Value                          |Purpose|
+|----------------|-------------------------------|-----------------------------|
+|legendValue| `string`          |What text do you want to correspond with this section?            |
+| valueColorAssignment|`string`|What color will this key be?|
 
-## Build
+--------------
+*bannerProgressBar* : `boolean` - Do you want to display the total number above the progress bar (see examples folder to see difference).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Notes
+This is still a work in progress, please feel free to request updates. The next update will be the ability to customize the fonts.
